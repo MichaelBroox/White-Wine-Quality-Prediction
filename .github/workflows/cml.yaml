@@ -21,13 +21,13 @@ jobs:
           cat metrics.txt >> report.md
           
           echo "# CONFUSION_MATRIX" >> report.md
-          cml-publish figures/confustion_matrix_plot.png --md >> report.md
+          cml-publish confustion_matrix_plot.png --md >> report.md
           
           echo "# ROC_CURVE" >> report.md
-          cml-publish figures/ROC_Curve.png --md >> report.md
+          cml-publish ROC_Curve.png --md >> report.md
           
           echo "# RESIDUALS PLOT" >> report.md
-          cml-publish figures/Residuals_plot.png --md >> report.md
+          cml-publish Residuals_plot.png --md >> report.md
           
           cml-send-comment report.md
 

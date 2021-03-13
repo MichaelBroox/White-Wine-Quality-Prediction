@@ -325,7 +325,7 @@ helper.evaluate_classifier(
     X_test=normalized_X_test_new, 
     y_test=y_test,
     save_figure=True,
-    figure_path='figures',
+#     figure_path='figures',
     transparent=True, 
     dpi=600,
     cmap="Purples",

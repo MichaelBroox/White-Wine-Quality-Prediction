@@ -313,7 +313,7 @@ plt.savefig('ROC_Curve.png', dpi=600, transparent=True)
 
 fig = plt.figure(figsize=(7, 7), dpi=300)
 
-y_pred_ = classifier.predict(normalized_X_test_new) + np.random.normal(0, 0.25, len(y_test))
+y_pred_ = classifier.predict(normalized_X_test) + np.random.normal(0, 0.25, len(y_test))
 
 y_jitter = y_test + np.random.normal(0, 0.25, len(y_test))
 
@@ -322,7 +322,7 @@ residuals_df = pd.DataFrame(list(zip(y_jitter, y_pred_)), columns=["Actual Label
 ax = sns.scatterplot(
     x="Actual Label", 
     y="Predicted Label",
-    data=residual_df,
+    data=residuals_df,
     facecolor='dodgerblue',
     linewidth=1.5,
 )
@@ -333,9 +333,9 @@ ax.set_ylabel('Predicted Label', fontsize=14)#ylabel
 
 ax.set_title('Residuals', fontsize=20)
 
-min = residual_df["Predicted Label"].min()
+min = residuals_df["Predicted Label"].min()
 
-max = residual_df["Predicted Label"].max()
+max = residuals_df["Predicted Label"].max()
 
 ax.plot([min, max], [min, max], color='black', linewidth=1)
 

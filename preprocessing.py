@@ -34,8 +34,8 @@ df = raw_data.copy()
 ### Creating Folders to keep figures and tables ###
 ###################################################
 
-# helper.create_folder('./csv_tables/')
-# helper.create_folder('./figures/')
+helper.create_folder('./csv_tables/')
+helper.create_folder('./figures/')
 
 ##################################################
 ### Getting Statistical Summary of the Dataset ###
@@ -134,7 +134,7 @@ plt.title('Distribution of quality', fontsize=22)
 
 plt.grid(color='grey')
 
-plt.savefig('figures/Distribution_Plot_of_quality.png', dpi=600, transparent=True)
+plt.savefig('Distribution_Plot_of_quality.png', dpi=600, transparent=True)
 # plt.show()
 
 
@@ -195,7 +195,7 @@ count_plot('quality_rate')
 ##############################################
 
 features_mean_stats = df.groupby('quality_rate').mean()
-features_mean_stats.to_csv("csv_tables/features_mean_stats_per_target_variable.csv", index=True)
+features_mean_stats.to_csv("features_mean_stats_per_target_variable.csv", index=True)
 # features_mean_stats
 
 for col in list(features_mean_stats.columns.values):
@@ -228,7 +228,7 @@ for col in list(features_mean_stats.columns.values):
 
 features_std_stats = df.groupby('quality_rate').std()
 
-features_std_stats.to_csv("csv_tables/features_std_stats_per_target_variable.csv", index=True)
+features_std_stats.to_csv("features_std_stats_per_target_variable.csv", index=True)
 features_std_stats
 
 
@@ -285,4 +285,4 @@ df_modified = df.copy()
 ### Saving the Modified Dataset as csv ###
 ##########################################
 
-df_modified.to_csv("data/preprocessed_data.csv", index=False)
+df_modified.to_csv("preprocessed_data.csv", index=False)

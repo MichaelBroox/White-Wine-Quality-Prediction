@@ -244,7 +244,7 @@ sns.heatmap(
     cm_df, 
     annot=True, 
     square=True,
-    annot_kws={"size": 20}, 
+    annot_kws={"size": 18}, 
     cmap='Blues', 
     fmt='d', 
     linewidths=2, 
@@ -256,13 +256,13 @@ sns.heatmap(
 
 plt.title("Confusion Matrix", fontsize=25, pad=20)
 
-plt.xlabel("Predicted Label", fontsize=15, labelpad=3)
-plt.xticks(fontsize=20)
+plt.xlabel("Predicted Label", fontsize=18, labelpad=3)
+plt.xticks(fontsize=15)
 
-plt.ylabel("Actual Label", fontsize=15)
-plt.yticks(fontsize=20)
+plt.ylabel("Actual Label", fontsize=18)
+plt.yticks(fontsize=15)
 
-ax.text(2.25, -0.10,'Test Accuracy: '+str(round(test_accuracy_score, 2)), fontsize=14)
+ax.text(2.25, -0.10,'Test Accuracy: '+str(round(test_accuracy_score, 3)), fontsize=14)
 
 ax.text(2.25, 0.0,'Precision: '+str(round(precision, 4)), fontsize=14)
 

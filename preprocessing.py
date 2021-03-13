@@ -34,8 +34,8 @@ df = raw_data.copy()
 ### Creating Folders to keep figures and tables ###
 ###################################################
 
-helper.create_folder('./csv_tables/')
-helper.create_folder('./figures/')
+# helper.create_folder('./csv_tables/')
+# helper.create_folder('./figures/')
 
 ##################################################
 ### Getting Statistical Summary of the Dataset ###

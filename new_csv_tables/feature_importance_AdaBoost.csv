@@ -1,0 +1,7 @@
+Feature,Importance
+alcohol,0.18
+volatile acidity,0.18
+free sulfur dioxide,0.2
+citric acid,0.14
+chlorides,0.18
+total sulfur dioxide,0.12

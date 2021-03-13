@@ -1,0 +1,4 @@
+Test Accuracy variance explained: 0.7915
+Precision Score: 0.7941
+Recall Score: 0.787
+F1 Score: 0.7905

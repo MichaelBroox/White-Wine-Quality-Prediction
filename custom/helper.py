@@ -279,7 +279,7 @@ def detect_outliers(
             plt.show()
         else:
             plt.savefig(path+'/'+image_name+str(i), dpi=dpi, transparent=transparent)
-            # plt.show()
+            plt.show()
 
 
 
@@ -422,7 +422,7 @@ def correlation_viz(
         )
         
         plt.savefig(path+'/'+image_name, dpi=dpi, transparent=transparent)
-        # plt.show()
+        plt.show()
 
 
 
@@ -736,7 +736,7 @@ def evaluate_regressor(
         plt.show()
     else:
         plt.savefig(path+'/'+model_name, dpi=dpi, transparent=transparent)
-        # plt.show()
+        plt.show()
         
         
     return None
@@ -1079,7 +1079,7 @@ def plot_model_summary(
         plt.savefig(figure_path+'/'+figure_name, dpi=dpi, transparent=transparent)
 
         # Showing the plot
-        # plt.show()
+        plt.show()
 
         if figure_path == None:
             print("###############################################################################")
@@ -1095,7 +1095,7 @@ def plot_model_summary(
         plt.savefig(figure_path+'/Bar_Charts_of_Models_and_their_Accuracy.png', dpi=dpi, transparent=True)
 
         # Showing the plot
-        # plt.show()
+        plt.show()
 
         if figure_path == None:
             print("###############################################################################")
@@ -1179,7 +1179,7 @@ def plot_feature_importance(
             plt.savefig(path+'/'+column_name, dpi=dpi, transparent=transparent)
                 
             # Showing the plot
-            # plt.show()
+            plt.show()
             
             if path == None:
                 print("###############################################################################")
@@ -1303,11 +1303,11 @@ def evaluate_classifier(
     
     elif save_figure == True:
         plt.savefig(figure_path+'/confustion_matrix_plot.png', dpi=dpi, transparent=transparent)
-        # plt.show()
+        plt.show()
     
     else:
         print("The `save_figure` argument accepts bool (True or False) values only!")
-        # plt.show()
+        plt.show()
     
     print("\n")
     print("\n")
@@ -1345,11 +1345,11 @@ def evaluate_classifier(
 
     elif save_figure == True:
         plt.savefig(figure_path+'/ROC_Curve.png', dpi=dpi, transparent=transparent)
-        # plt.show()
+        plt.show()
 
     else:
         print("The `save_figure` argument accepts bool (True or False) values only!")
-        # plt.show()
+        plt.show()
     
     
     ######################################
@@ -1391,11 +1391,11 @@ def evaluate_classifier(
 
     elif save_figure == True:
         plt.savefig(figure_path+'/Residuals_plot.png', dpi=dpi, transparent=transparent)
-        # plt.show()
+        plt.show()
     
     else:
         print("The `save_figure` argument accepts bool (True or False) values only!")
-        # plt.show()
+        plt.show()
     
     display(report_df)
 

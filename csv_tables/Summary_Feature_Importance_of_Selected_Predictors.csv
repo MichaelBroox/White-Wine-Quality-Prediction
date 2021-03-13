@@ -1,0 +1,12 @@
+Decision Tree,Random Forest,AdaBoost,ExtraTree,GradientBoosting,XGBOOST
+alcohol,alcohol,free sulfur dioxide,alcohol,alcohol,alcohol
+free sulfur dioxide,density,volatile acidity,density,volatile acidity,volatile acidity
+volatile acidity,free sulfur dioxide,alcohol,volatile acidity,free sulfur dioxide,free sulfur dioxide
+total sulfur dioxide,volatile acidity,total sulfur dioxide,free sulfur dioxide,citric acid,citric acid
+sulphates,total sulfur dioxide,citric acid,total sulfur dioxide,chlorides,fixed acidity
+chlorides,chlorides,residual sugar,residual sugar,total sulfur dioxide,residual sugar
+pH,residual sugar,chlorides,citric acid,residual sugar,total sulfur dioxide
+citric acid,citric acid,pH,chlorides,sulphates,sulphates
+residual sugar,sulphates,fixed acidity,pH,fixed acidity,pH
+fixed acidity,pH,density,fixed acidity,density,chlorides
+density,fixed acidity,sulphates,sulphates,pH,density

@@ -26,9 +26,7 @@ from sklearn import linear_model
 from custom import helper
 
 # Loading evaluation metrics
-from sklearn.metrics import mean_squared_error
-from sklearn.metrics import mean_absolute_error
-from sklearn.metrics import r2_score
+from sklearn import metrics
 
 import pickle
 #####################################################################################
@@ -40,7 +38,7 @@ import pickle
 ### Loading Data ###
 ####################
 
-preprocessed_data = pd.read_csv("data/preprocessed_data.csv")
+preprocessed_data = pd.read_csv("preprocessed_data.csv")
 # preprocessed_data.head()
 
 
@@ -128,121 +126,6 @@ models = [
     ("XGBOOST", xgboost.XGBClassifier(random_state=seed)),
 ]
 
-feature_importance_of_models, df_model_features_with_importance, model_summary = helper.baseline_performance(
-    models=models, 
-    X_train=normalized_X_train, 
-    y_train=y_train, 
-    X_test=normalized_X_test, 
-    y_test=y_test, 
-    column_names=list(X.columns.values), 
-    csv_path='csv_tables', 
-    save_model_summary=True, 
-    save_feature_importance=True, 
-    save_feature_imp_of_each_model=True,
-)
-
-
-##########################################
-### Plotting Train and Test Accuracies ###
-##########################################
-
-helper.plot_model_summary(
-    model_summary=model_summary, 
-    figsize=(20, 14), 
-    dpi=600, 
-    transparent=True,
-    save_visualization=True, 
-    figure_name='Train and Test Accuracies', 
-    figure_path='figures',
-)
-
-
-###################################
-### Plotting Feature Importance ###
-###################################
-
-helper.plot_feature_importance(
-    df_model_features_with_importance, 
-    figsize=(20, 15), 
-    dpi=600, 
-    transparent=True,
-    annotate_fontsize='xx-large',
-    save_plot=True,
-    path='figures',
-)
-
-
-##############################
-### Getting Top 6 Features ###
-##############################
-
-top_6_features = list(feature_importance_of_models['GradientBoosting'].head(6))
-# top_6_features
-
-normalized_X_train_new = normalized_X_train[top_6_features]
-# normalized_X_train_new.head()
-
-normalized_X_test_new = normalized_X_test[top_6_features]
-# normalized_X_test_new.head()
-
-# X_train_new, X_test_new, y_train_new, y_test_new = model_selection.train_test_split(X_new, y, test_size=0.2, stratify=y, random_state=80)
-
-
-############################
-### Creating New Folders ###
-############################
-
-# helper.create_folder('./new_csv_tables/')
-# helper.create_folder('./new_figures/')
-
-
-###################################
-### Modelling on Top 6 Features ###
-###################################
-
-feature_importance_of_models_new, model_features_with_importance_new, model_summary_new = helper.baseline_performance(
-    models=models, 
-    X_train=normalized_X_train_new, 
-    y_train=y_train, 
-    X_test=normalized_X_test_new, 
-    y_test=y_test, 
-    column_names=list(top_6_features), 
-    csv_path='new_csv_tables', 
-    save_model_summary=True, 
-    save_feature_importance=True, 
-    save_feature_imp_of_each_model=True
-)
-
-
-##########################################
-### Plotting Train and Test Accuracies ###
-##########################################
-
-helper.plot_model_summary(
-    model_summary=model_summary_new, 
-    figsize=(20, 14), 
-    dpi=300, 
-    transparent=True,
-    save_visualization=True, 
-    figure_name='Train and Test Accuracies_new', 
-    figure_path='new_figures',
-)
-
-
-###################################
-### Plotting Feature Importance ###
-###################################
-
-helper.plot_feature_importance(
-    feature_importance=model_features_with_importance_new, 
-    figsize=(20, 14), 
-    dpi=600, 
-    transparent=True,
-    annotate_fontsize='xx-large',
-    save_plot=True,
-    path='new_figures',
-)
-
 
 ###############################
 ### Cross Validating Models ###
@@ -290,7 +173,7 @@ cv_results = pd.DataFrame({"model_name": model_names, "mean_score": cv_mean_scor
 cv_results.sort_values("mean_score", ascending=False, inplace=True,)
 
 # Saving the DataFrame as a csv file
-cv_results.to_csv("csv_tables/cross_validation_results.csv", index=True)
+cv_results.to_csv("cross_validation_results.csv", index=True)
 
 # Showing the final results
 # cv_results
@@ -304,29 +187,159 @@ cv_results.to_csv("csv_tables/cross_validation_results.csv", index=True)
     
 classifier = models[4][1]
 
-classifier.fit(normalized_X_train_new, y_train)
+classifier.fit(normalized_X_train, y_train)
 
 
 ############################################################
 ### Getting Train and Test Accuracy of the Choosen Model ###
 ############################################################
 
-train_accuracy = classifier.score(normalized_X_train_new, y_train)
+train_accuracy = classifier.score(normalized_X_train, y_train)
 
-test_accuracy = classifier.score(normalized_X_test_new, y_test)
+test_accuracy = classifier.score(normalized_X_test, y_test)
 
 
 #############################
 ### Evaluating Classifier ###
 #############################
 
-helper.evaluate_classifier(
-    estimator=classifier, 
-    X_test=normalized_X_test_new, 
-    y_test=y_test,
-    save_figure=True,
-    figure_path='figures',
-    transparent=True, 
-    dpi=600,
-    cmap="Purples",
+y_pred = classifier.predict(normalized_X_test)
+y_proba = classifier.predict_proba(normalized_X_test)[:, 1]
+
+test_accuracy_score = metrics.accuracy_score(y_test, y_pred)
+
+precision = metrics.precision_score(y_test, y_pred)
+
+recall = metrics.recall_score(y_test, y_pred)
+
+f1_score = metrics.f1_score(y_test, y_pred)
+
+# Write scores to a text file
+with open("metrics.txt", 'w') as output_text_file:
+        
+        output_text_file.write(f"Training Accuracy variance explained: {round(train_accuracy, 4)}\n")
+        
+        output_text_file.write(f"Test Accuracy variance explained: {round(test_accuracy_score, 4)}\n")
+        
+        output_text_file.write(f"Precision Score: {round(precision, 4)}\n")
+        
+        output_text_file.write(f"Recall Score: {round(recall, 4)}\n")
+        
+        output_text_file.write(f"F1 Score: {round(f1_score, 4)}\n")
+
+
+#################################
+### Plotting Confusion Matrix ###
+#################################
+
+cm_output = metrics.confusion_matrix(y_test, y_pred)
+
+# Put it into a dataframe for seaborn plot function
+cm_df = pd.DataFrame(cm_output)
+
+fig, ax = plt.subplots(figsize=(7, 7), dpi=300)
+
+sns.heatmap(
+    cm_df, 
+    annot=True, 
+    square=True,
+    annot_kws={"size": 20}, 
+    cmap='Blues', 
+    fmt='d', 
+    linewidths=2, 
+    linecolor="darkorange", 
+    cbar=False, 
+    xticklabels=[0, 1], 
+    yticklabels=[0, 1]
 )
+
+plt.title("Confusion Matrix", fontsize=25, pad=20)
+
+plt.xlabel("Predicted Label", fontsize=25, labelpad=5)
+plt.xticks(fontsize=20)
+
+plt.ylabel("Actual Label", fontsize=25, labelpad=5)
+plt.yticks(fontsize=20)
+
+ax.text(2.25, -0.10,'Test Accuracy: '+str(round(test_accuracy_score, 4)), fontsize=14)
+
+ax.text(2.25, 0.0,'Precision: '+str(round(precision, 4)), fontsize=14)
+
+ax.text(2.25, 0.1,'Recall: '+str(round(recall, 4)), fontsize=14)
+
+ax.text(2.25, 0.2,'F1 Score: '+str(round(f1_score, 4)), fontsize=14)
+
+fig.tight_layout()
+
+plt.savefig('confusion_matrix_plot.png', dpi=600, transparent=True)
+# plt.show()
+
+
+##########################
+### Plotting ROC_Curve ###
+##########################
+
+false_positive_rate, true_positive_rate, thresholds = metrics.roc_curve(y_test, y_proba)
+
+roc_score = metrics.roc_auc_score(y_test, y_proba)
+
+fig = plt.figure(figsize=(12, 10), dpi=300)
+
+plt.plot([0, 1], [0, 1], 'k--')
+
+plt.plot(false_positive_rate, true_positive_rate, color='darkorange')
+
+plt.fill_between(false_positive_rate, true_positive_rate, alpha=0.2, color='orange')
+
+plt.title(f'ROC Curve - AUC : {round(roc_score, 3)}', fontsize=25, pad=20)
+
+plt.xlabel('False Positive Rate', fontsize=20, labelpad=5)
+plt.xticks(fontsize=20)
+
+plt.ylabel('True Positive Rate', fontsize=20, labelpad=5)
+plt.yticks(fontsize=20)
+
+plt.grid(color='grey')
+
+fig.tight_layout()
+
+plt.savefig('ROC_Curve.png', dpi=600, transparent=True)
+# plt.show()
+
+
+##########################
+### Plotting Residuals ###
+##########################
+
+fig = plt.figure(figsize=(7, 7), dpi=300)
+
+y_pred_ = classifier.predict(normalized_X_test_new) + np.random.normal(0, 0.25, len(y_test))
+
+y_jitter = y_test + np.random.normal(0, 0.25, len(y_test))
+
+residuals_df = pd.DataFrame(list(zip(y_jitter, y_pred_)), columns=["Actual Label", "Predicted Label"])
+
+ax = sns.scatterplot(
+    x="Actual Label", 
+    y="Predicted Label",
+    data=residual_df,
+    facecolor='dodgerblue',
+    linewidth=1.5,
+)
+    
+ax.set_xlabel('True wine quality', fontsize=14) 
+
+ax.set_ylabel('Predicted wine quality', fontsize=14)#ylabel
+
+ax.set_title('Residuals', fontsize=20)
+
+min = residual_df"Predicted Label".min()
+
+max = residual_df"Predicted Label".max()
+
+ax.plot([min, max], [min, max], color='black', linewidth=1)
+
+plt.tight_layout()
+
+plt.savefig('Residuals_plot.png', dpi=600, transparent=True)
+# plt.show()

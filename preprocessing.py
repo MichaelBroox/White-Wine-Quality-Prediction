@@ -41,7 +41,7 @@ df = raw_data.copy()
 ### Getting Statistical Summary of the Dataset ###
 ##################################################
 
-data_description = df.describe(include='all', datetime_is_numeric=True)
+data_description = df.describe(include='all')
 data_description.to_csv("csv_tables/data_description.csv", index=False)
 # data_description
 

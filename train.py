@@ -259,10 +259,10 @@ plt.title("Confusion Matrix", fontsize=25, pad=20)
 plt.xlabel("Predicted Label", fontsize=15, labelpad=3)
 plt.xticks(fontsize=20)
 
-plt.ylabel("Actual Label", fontsize=15, labelpad=3)
+plt.ylabel("Actual Label", fontsize=15)
 plt.yticks(fontsize=20)
 
-ax.text(2.25, -0.10,'Test Accuracy: '+str(round(test_accuracy_score, 4)), fontsize=14)
+ax.text(2.25, -0.10,'Test Accuracy: '+str(round(test_accuracy_score, 2)), fontsize=14)
 
 ax.text(2.25, 0.0,'Precision: '+str(round(precision, 4)), fontsize=14)
 

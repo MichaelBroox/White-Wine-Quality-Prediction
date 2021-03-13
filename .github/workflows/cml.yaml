@@ -1,0 +1,33 @@
+name: white-wine-quality-prediction-workflow
+
+on: [push]
+
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: cml
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip3 install -r requirements.txt
+          python preprocessing.py
+          python train.py
+          
+          echo "# MODEL METRICS" >> report.md
+          cat metrics.txt >> report.md
+          
+          echo "# CONFUSION_MATRIX" >> report.md
+          cml-publish confustion_matrix_plot.png --md >> report.md
+          
+          echo "# ROC_CURVE" >> report.md
+          cml-publish ROC_Curve.png --md >> report.md
+          
+          echo "# RESIDUALS PLOT" >> report.md
+          cml-publish Residuals_plot.png --md >> report.md
+          
+          cml-send-comment report.md
+

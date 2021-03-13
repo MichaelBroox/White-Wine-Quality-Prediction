@@ -1374,7 +1374,7 @@ def evaluate_classifier(
     
     ax.set_xlabel('Actual Label', fontsize=14) 
     
-    ax.set_ylabel('Predicted Label', fontsize=14)#ylabel
+    ax.set_ylabel('Predicted Label', fontsize=14)
     
     ax.set_title('Residuals', fontsize=20)
     

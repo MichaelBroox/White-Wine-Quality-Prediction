@@ -271,7 +271,7 @@ ax.text(2.25, 0.2,'F1 Score: '+str(round(f1_score, 4)), fontsize=14)
 
 fig.tight_layout()
 
-plt.savefig('confusion_matrix_plot.png', dpi=600, transparent=True)
+plt.savefig('confusion_matrix_plot.png', dpi=600, transparent=False)
 # plt.show()
 
 
@@ -303,7 +303,7 @@ plt.grid(color='grey')
 
 fig.tight_layout()
 
-plt.savefig('ROC_Curve.png', dpi=600, transparent=True)
+plt.savefig('ROC_Curve.png', dpi=600, transparent=False)
 # plt.show()
 
 
@@ -341,5 +341,5 @@ ax.plot([min, max], [min, max], color='black', linewidth=1)
 
 plt.tight_layout()
 
-plt.savefig('Residuals_plot.png', dpi=600, transparent=True)
+plt.savefig('Residuals_plot.png', dpi=600, transparent=False)
 # plt.show()

@@ -29,6 +29,7 @@ from custom import helper
 from sklearn import metrics
 
 import pickle
+
 #####################################################################################
 #####################################################################################
 
@@ -176,7 +177,7 @@ cv_results.sort_values("mean_score", ascending=False, inplace=True,)
 cv_results.to_csv("cross_validation_results.csv", index=True)
 
 # Showing the final results
-# cv_results
+print(cv_results)
 
 
 #######################################
@@ -255,10 +256,10 @@ sns.heatmap(
 
 plt.title("Confusion Matrix", fontsize=25, pad=20)
 
-plt.xlabel("Predicted Label", fontsize=25, labelpad=5)
+plt.xlabel("Predicted Label", fontsize=15, labelpad=3)
 plt.xticks(fontsize=20)
 
-plt.ylabel("Actual Label", fontsize=25, labelpad=5)
+plt.ylabel("Actual Label", fontsize=15, labelpad=3)
 plt.yticks(fontsize=20)
 
 ax.text(2.25, -0.10,'Test Accuracy: '+str(round(test_accuracy_score, 4)), fontsize=14)

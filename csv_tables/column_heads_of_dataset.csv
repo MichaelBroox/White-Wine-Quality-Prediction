@@ -1,0 +1,13 @@
+,column_names,data_type
+0,fixed acidity,float64
+1,volatile acidity,float64
+2,citric acid,float64
+3,residual sugar,float64
+4,chlorides,float64
+5,free sulfur dioxide,float64
+6,total sulfur dioxide,float64
+7,density,float64
+8,pH,float64
+9,sulphates,float64
+10,alcohol,float64
+11,quality,int64

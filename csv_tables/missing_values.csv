@@ -1,0 +1,4 @@
+,fixed acidity,volatile acidity,citric acid,residual sugar,chlorides,free sulfur dioxide,total sulfur dioxide,density,pH,sulphates,alcohol,quality
+Total,0,0,0,0,0,0,0,0,0,0,0,0
+Percent,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Types,float64,float64,float64,float64,float64,float64,float64,float64,float64,float64,float64,int64

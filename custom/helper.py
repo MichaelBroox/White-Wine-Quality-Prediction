@@ -1206,7 +1206,7 @@ def evaluate_classifier(
     X_test, 
     y_test,
     save_figure=False,
-    figure_path=None,
+    figure_path="",
     transparent=False, 
     dpi=300,
     cmap="Purples",

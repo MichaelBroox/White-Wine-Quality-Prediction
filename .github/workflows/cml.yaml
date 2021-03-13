@@ -22,7 +22,7 @@ jobs:
           cat metrics.txt >> report.md
           
           echo "# CONFUSION_MATRIX" >> report.md
-          cml-publish confustion_matrix_plot.png --md >> report.md
+          cml-publish confusion_matrix_plot.png --md >> report.md
           
           echo "# ROC_CURVE" >> report.md
           cml-publish ROC_Curve.png --md >> report.md

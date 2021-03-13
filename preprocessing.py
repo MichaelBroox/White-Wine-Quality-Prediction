@@ -22,10 +22,12 @@ from custom import helper
 ### Loading Dataset ###
 #######################
 
+print('Loading Dataset...')
 raw_data = pd.read_csv("data/winequality-white.csv", sep=';', index_col=None, encoding='ISO-8859-1', engine='python')
 # raw_data.head()
 
 # Creating a Copy of the Dataset
+print('Creating a copy of the dataset...')
 df = raw_data.copy()
 # df.head()
 
@@ -43,7 +45,9 @@ helper.create_folder('./figures/')
 
 data_description = df.describe(include='all')
 data_description.to_csv("csv_tables/data_description.csv", index=False)
-# data_description
+
+print('Getting Statistical Summary of the Dataset...')
+print(data_description)
 
 
 #################################################
@@ -68,13 +72,16 @@ dataset_columns.to_csv("csv_tables/column_heads_of_dataset.csv", index=True)
 
 missing_values = helper.missing_data(df)
 missing_values.to_csv("csv_tables/missing_values.csv", index=True)
-# missing_values
+
+print('Checking Missing Values...')
+print(missing_values)
 
 
 ##################################
 ### Removing Duplicated Values ###
 #################################
 
+print('Dropping duplicated values...')
 df.drop_duplicates(keep='first', inplace=True)
 
 
@@ -82,9 +89,10 @@ df.drop_duplicates(keep='first', inplace=True)
 ### Checking Outlier Info ###
 #############################
 
+print('Checking Outliers...')
 outliers = helper.outlier_info(df)
 outliers.to_csv("csv_tables/outlier_info.csv", index=True)
-# outliers
+print(outliers)
 
 
 ##########################
@@ -196,7 +204,9 @@ count_plot('quality_rate')
 
 features_mean_stats = df.groupby('quality_rate').mean()
 features_mean_stats.to_csv("features_mean_stats_per_target_variable.csv", index=True)
-# features_mean_stats
+
+print('Feature Statistics per target variable...')
+print(features_mean_stats)
 
 for col in list(features_mean_stats.columns.values):
     subset = features_mean_stats[col]
@@ -229,7 +239,7 @@ for col in list(features_mean_stats.columns.values):
 features_std_stats = df.groupby('quality_rate').std()
 
 features_std_stats.to_csv("features_std_stats_per_target_variable.csv", index=True)
-features_std_stats
+print(f'{features_std_stats}')
 
 
 ######################################################
@@ -285,4 +295,5 @@ df_modified = df.copy()
 ### Saving the Modified Dataset as csv ###
 ##########################################
 
+print('Saving Preprocessed Data...')
 df_modified.to_csv("preprocessed_data.csv", index=False)

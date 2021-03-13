@@ -1399,4 +1399,4 @@ def evaluate_classifier(
     
     display(report_df)
 
-    plt.close('all')
+#     plt.close('all')

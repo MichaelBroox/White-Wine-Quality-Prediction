@@ -327,15 +327,15 @@ ax = sns.scatterplot(
     linewidth=1.5,
 )
     
-ax.set_xlabel('True wine quality', fontsize=14) 
+ax.set_xlabel('Actual Label', fontsize=14) 
 
-ax.set_ylabel('Predicted wine quality', fontsize=14)#ylabel
+ax.set_ylabel('Predicted Label', fontsize=14)#ylabel
 
 ax.set_title('Residuals', fontsize=20)
 
-min = residual_df"Predicted Label".min()
+min = residual_df["Predicted Label"].min()
 
-max = residual_df"Predicted Label".max()
+max = residual_df["Predicted Label"].max()
 
 ax.plot([min, max], [min, max], color='black', linewidth=1)
 

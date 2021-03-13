@@ -192,8 +192,8 @@ normalized_X_test_new = normalized_X_test[top_6_features]
 ### Creating New Folders ###
 ############################
 
-helper.create_folder('./new_csv_tables/')
-helper.create_folder('./new_figures/')
+# helper.create_folder('./new_csv_tables/')
+# helper.create_folder('./new_figures/')
 
 
 ###################################

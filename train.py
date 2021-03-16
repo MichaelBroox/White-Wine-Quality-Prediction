@@ -133,7 +133,7 @@ models = [
 ###############################
 
 # Splitting data into 10 folds
-cv_kfold = model_selection.KFold(n_splits=10, shuffle=True, random_state=150)
+cv_kfold = model_selection.KFold(n_splits=10, shuffle=True, random_state=seed)
 
 scorer = "f1"
 
@@ -218,9 +218,9 @@ f1_score = metrics.f1_score(y_test, y_pred)
 # Write scores to a text file
 with open("metrics.txt", 'w') as output_text_file:
         
-        output_text_file.write(f"Training Accuracy variance explained: {round(train_accuracy, 4)}\n")
+        output_text_file.write(f"Training Accuracy: {round(train_accuracy, 4)}\n")
         
-        output_text_file.write(f"Test Accuracy variance explained: {round(test_accuracy_score, 4)}\n")
+        output_text_file.write(f"Test Accuracy: {round(test_accuracy_score, 4)}\n")
         
         output_text_file.write(f"Precision Score: {round(precision, 4)}\n")
         
@@ -262,7 +262,7 @@ plt.xticks(fontsize=15)
 plt.ylabel("Actual Label", fontsize=18)
 plt.yticks(fontsize=15)
 
-ax.text(2.25, -0.10,'Test Accuracy: '+str(round(test_accuracy_score, 3)), fontsize=14)
+ax.text(2.25, -0.10,'Accuracy: '+str(round(test_accuracy_score, 3)), fontsize=14)
 
 ax.text(2.25, 0.0,'Precision: '+str(round(precision, 4)), fontsize=14)
 

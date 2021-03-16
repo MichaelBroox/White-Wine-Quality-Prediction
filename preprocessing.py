@@ -206,7 +206,8 @@ features_mean_stats = df.groupby('quality_rate').mean()
 features_mean_stats.to_csv("features_mean_stats_per_target_variable.csv", index=True)
 
 print('Feature Statistics per target variable...')
-print(features_mean_stats)
+print('\nMean Values...')
+print(features_mean_stats.T)
 
 for col in list(features_mean_stats.columns.values):
     subset = features_mean_stats[col]
@@ -239,7 +240,9 @@ for col in list(features_mean_stats.columns.values):
 features_std_stats = df.groupby('quality_rate').std()
 
 features_std_stats.to_csv("features_std_stats_per_target_variable.csv", index=True)
-print(f'{features_std_stats}')
+
+print('\n Standard Deviation Values...')
+print(features_std_stats.T)
 
 
 ######################################################

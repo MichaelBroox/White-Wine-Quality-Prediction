@@ -63,11 +63,11 @@ After creating the target variable, it was observed that, the number of wines th
 
 ### Correlation of Data Features
 The ouput feature isn't strongly correlated to any of the physicochemical features of the dataset with **`alcohol`** having the highest correlation value of **`0.46`** with the target feature. However, there are strong correlations between some of the physicochemical features.
----
+
 + **`residual Sugar`** has a correlation value of **`0.82`** with **`density`**, 
 ---
 + **`total sulfur dioxide`** has a correlation value of **`0.62`** with **`free sulfur dioxide`**, 
---
+---
 + **`density`** has a correlation value of **`0.54`** with **`total sulfur dioxide`** 
 ---
 + and **`alcohol`** has a correlation value of **`-0.76`** with **`density`**.

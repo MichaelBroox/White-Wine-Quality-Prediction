@@ -126,6 +126,8 @@ After upsampling the dataset, it was then splitted into **`train and test sets`*
 The data was then normalized to ensure that data values are uniform to help the machine learning algorithms archive better results and this was done with the help of the **`StandardScaler preprocessing function`** from the **`sklearn library`**. 
 
 ## Modelling
+**`6 different machine learning algoritms`** were chosen of this task,
+**`1 tree algorithm`** (**`Decision Tree`**), and **`5 ensembles`** (**`Random Forest, AdaBoost, ExtraTree, GradientBoosting and XGBOOST`**) to see which algorithm will perform better on this classification task.
 
 ## Evaluation
 

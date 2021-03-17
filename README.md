@@ -1,1 +1,77 @@
-# White-Wine-Quality-Prediction
+![AddictivePython](AddictivePython.png)
+---
+# White Wine quality prediction
+
+## Introduction
+The white wine is a variant of the Portuguese **"Vinho Verde"** wine **_[UCI](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_** which is a unique and valued wine in the wine industry **_[Vinho Verde](https://www.vinhoverde.pt/en/history-of-vinho-verde)_**.
+The origin of Vinho Verde which is one of the largest and oldest wine regions in the world refers to the natural characteristics of the region where the wines are being made. The region produces dense green foliage as a natural characteristic and occupies the northwest of Portugal **_[Vinho Verde](https://www.vinhoverde.pt/en/history-of-vinho-verde)_**. 
+
+## Dataset, Features and Target Variable
+The dataset has 4898 entries with 12 columns and it is available from the **_[UCI machine learning repository](https://archive.ics.uci.edu/ml/datasets/wine+quality)_**.
+
+### Data Features
+The data features consist of only physicochemical properties **_[UCI](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_** of white wines and below are the dataset features;
+
++ **_fixed acidity_**: Most acids involved with wine or fixed or nonvolatile (do not evaporate readily).
+---
++ **_volatile acidity_**: Amount of acetic acid in wine.
+---
++ **_citric acid_**: Found in small quantities, citric acid can add 'freshness' and flavor to wines.
+---
++ **_residual sugar_**: Amount of sugar remaining in the wine after wine fermentation stops.
+---
++ **_chlorides_**: Amount of salt in the wine.
+---
++ **_free sulfur dioxide_**: Free form of SO2 exists in equilibrium between molecular SO2 (as a dissolved gas) and bisulfite ion.
+---
++ **_total sulfur dioxide_**: Amount of free and bound forms of S02.
+---
++ **_density_**: Density of the wine.
+---
++ **_pH_**: Describes how acidic or basic a wine is on a scale from 0 (very acidic) to 14 (very basic).
+---
++ **_sulphates_**: A wine additive which can contribute to sulfur dioxide gas (S02) levels.
+---
++ **_alcohol_**: Alcohol percentage of the wine.
+---
++ **_quality_**: Target variable.
+---
+All data values were recorded as continous values of type `float64` with the exception of the output feature (`quality`) which is of the type `int64`.
+
+### Missing Values
+There were **no missng values*** found out of the 4898 entries of the dataset.
+
+### Duplicated Values
+There were **937 duplicated values** found in the dataset and they were treated by droping them and keeping the first instance of the duplicated values.
+
+### Target Variable
+The target variable `quality` is based on sensory data that ranges from **0** (*very bad*) to **10** (*very excellent*). However, upon analysing the data, it was observed that the instances of the `quality` attribute of the dataset had a data distribution that ranges from 3 to 9 which makes the problem to be a classification problem as shown below.
+
+![Distribution Plot](figures/Distribution_Plot_of_quality.png)
+
+Upon realizing that, the number of instances for each recorded value was counted and the results (from the highest to the lowest) indicated that there were **1788** wines that had a wine quality of **6**, **1175** wines of wine quality **5**, **689** of wine quality **7**, **153** of wine quality **4** and **131, 20 and 5** for wine quality **8, 3 and 9** respectively.
+
+![Count Plot](figures/quality_count_plot.png)
+
+A different target variable was then created for the dataset to classify wines as **`low quality`** wines and **`high quality`** wines with `high quality` wines being wines that have a quality value **`greater than`** the **`mean value`** of the output (`quality`) data feature and `low quality` wines, wines with `quality` values **`less than`** the `mean value` of the quality feature. 
+After creating the target variable, it was observed that, the number of wines that were classified as high quality wines were greater than the number of wines that were classified as low quality wines which makes the problem to be dealt with an **_imbalanced classification problem_** as shown below.
+
+![Count Plot2](figures/quality_rate_count_plot.png)
+
+
+## Exploration Data Analysis
+
+
+### Correlation of Data Features
+
+## Data Preprocessing
+
+## Modelling
+
+## Evaluation
+
+## Conclusion and Recommendation
+
+### Conclusion
+
+### Recommendation

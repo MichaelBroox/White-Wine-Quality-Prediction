@@ -129,6 +129,18 @@ The data was then normalized to ensure that data values are uniform to help the 
 **`6 different machine learning algoritms`** were chosen of this task,
 **`1 tree algorithm`** (**`Decision Tree`**), and **`5 ensembles`** (**`Random Forest, AdaBoost, ExtraTree, GradientBoosting and XGBOOST`**) to see which algorithm will perform better on this classification task.
 
+### Cross-Validation
+The 6 algorithms were cross-validated on the feature matrix and the target label of the dataset. Upon cross-validating the models, the results of the top three models that performed well on the dataset is as shown below;
+
++ **`ExtraTree`** had a **`mean_score value of 0.836`** and a **`standard deviation score of 0.014`**, 
+---
++ **`RandomForest`** had a **`mean socre of 0.834`** and a **`standard deviation score of 0.013`** 
+---
++ and **`GradientBoosting`** had a **`mean score value of 0.832`** and a **`standard deviation score of 0.019`**. 
+---
+Summary of the cross-validation results can be found as a csv file named **`cross_validation_results.csv`** in the **`csv_tables`** directory of this repository.
+
+### Modelling on Normalized Data
 The algorithms were fitted on the normalized data to see how the models will perform and also have a baseline performance to compare.
 
 Below is the results for the models performance on the first fit.
@@ -137,11 +149,19 @@ Below is the results for the models performance on the first fit.
 
 From the resutls, it was obeserved that 4 models (**`Decision Tree, Random Forest, ExtraTree and XGBOOST  `**) overfitted with only two models (**`AdaBoost and GradientBoosting`** ) that had a well fit on the dataset.
 
-Feature Importance of all the algorithms was also accquired and the figure below shows the feature importance of the GradientBoosting model. All other feature importance plots can be seen in the **`White Wine Quality Prediction notebook`** and also inside the directory called **`figures`** in this repository. Also, a summary of feature importances of all the models can be found as a csv file named **`Summary_Feature_Importance_of_Selected_Predictor(s).csv`** in the **`csv_tables`** directory.
+### Feature Importance
+Feature Importance of all the algorithms was also accquired and the figure below shows the feature importance of the GradientBoosting model. All other feature importance plots can be seen in the **`White Wine Quality Prediction notebook`** and also inside the directory called **`figures`** in this repository. Moreover, a summary of feature importances of all models can be found as a csv file named **`Summary_Feature_Importance_of_Selected_Predictor(s).csv`** in the **`csv_tables`** directory.
 
 ![GradientBoosting Feature Importance](figures/GradientBoosting.png)
 
-From the results, it is clearly seen that the most importance feature to determine whether a white wine is to be classified as a high quality or a low quality wine is the **`alcohol physicochemical property of white wines`**
+From the results, it is clearly seen that the most importance feature to determine whether a white wine is to be classified as a high quality or a low quality wine is the **`alcohol physicochemical property of white wines`**.
+
+### Modelling on Top Six Features
+After obtaining the feature importance from the various algorithms, the top six features (**`alcohol, volatile acidity, free sulfur dioxide, citric acid, chlorides, total sulfur dioxide`**) from the **`GradientBoosting`** feature importance were chosen and the algorithms again were fitted on these six features to see how the models will perform.
+
+After fitting the algorithms on the six features, the results of the model performance is as shown below;
+![Train and Test Accuracies of Models](new_figures/Train_and_Test_Accuracies_new.png)
+
 
 ## Evaluation
 

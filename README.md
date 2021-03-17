@@ -76,8 +76,18 @@ The figure below gives a summary of the correlation of data features.
 
 ![Correlation of Data Feature](figures/Data_Features_Correlation.png)
 
+### Outliers
+A total number of **`1018.0`** outliers were found in the dataset with **`citric acid`** being the data feature with the highest number of outliers (**`223.00`**) followed by **`chlorides`** (**`178.00`**) and **`alcohol`** having the least with **`no outliers`** present.
+
+A summary of the outliers can be found as a csv file named **`outlier_info.csv`** in the **`csv_tables`** directory of this repository.
+
+Here, you can see a figure of the distribution and boxplot of **`alcohol`**, all other plots can be found in the **`White Wine Quality EDA and Data Preprocessing`** notebook and also in the **`figures`** directory of this repository.
+
+![Distribution and Boxplot of alcohol](figures/Outlier10.png)
+
+### Feature Statistics
 Also, upon analysing the dataset, some interesting insights was observed on the features of the dataset;
----
+
 + **`fixed acidity`** of **`high quality white wines`** have a **`mean value of 6.779`**, whiles **`low quality white wines`** have a **`mean value of 6.957`**, 
 ---
 + **`residual sugar`** of **`high quality white wines`** have a **`mean value of 5.532`** whiles **`low quality white wines`** have a **`mean value of 6.656`**, 
@@ -87,17 +97,18 @@ Also, upon analysing the dataset, some interesting insights was observed on the 
 + **`alcohol`** of **`high quality white wines`** have a **`mean value of 10.940`** whiles **`low quality white wines`** have a **`mean value of 9.909`**.
 ---
 
-Here, you can see a **`bar plot`** for the **`density`** feature, all the other plots can be seen in the notebook and also in the **`figures`** directory of this repository.
+Here, you can see a **`bar plot`** for the **`density`** feature, all the other plots can be seen in the **`White Wine Quality EDA and Data Preprocessing`** notebook and also in the **`figures`** directory of this repository.
 
 ![Mean Value of density per Target Label](figures/Mean_Value_of_density_per_Target_Label.png)
 
 Summary of this statistics on all data features can be found as two csv files named **`features_mean_stats_per_target_variable.csv`** and **`features_std_stats_per_target_variable.csv`** in the **`csv_tables`** directory in this repository.
 
-**`KDE plots`** of the data features per the output feature can be found in the notebook and also inside the folder named **`figures`** in this repository.
+**`KDE plots`** of the data features per the output feature can be found in the **`White Wine Quality EDA and Data Preprocessing`** notebook and also inside the folder named **`figures`** in this repository.
 
-Below is the **`KDE plot`** of **`ph`**, all other KDE plots can be seen in the notebook and also in the **`figures`** directory of this respository.
+Below is the **`KDE plot`** of **`ph`**.
 
 ![KDE plot of ph](figures/pH_Distribution_of_high_rate_low_rate_quality.png)
+
 
 ## Data Preprocessing
 

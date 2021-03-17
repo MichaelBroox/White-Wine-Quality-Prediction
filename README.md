@@ -62,7 +62,7 @@ After creating the target variable, it was observed that, the number of wines th
 ## Exploration Data Analysis
 
 ### Correlation of Data Features
-The ouput feature isn't strongly correlated to any of the physicochemical features of the dataset with **`alcohol`** having the highest correlation value of **`0.46`** with the target feature. However, there are strong correlations between some of the physicochemical features.
+The output feature isn't strongly correlated to any of the physicochemical features of the dataset with **`alcohol`** having the highest correlation value of **`0.46`** with the target feature. However, there are strong correlations between some of the physicochemical features.
 
 + **`residual Sugar`** has a correlation value of **`0.82`** with **`density`**, 
 ---

@@ -62,29 +62,42 @@ After creating the target variable, it was observed that, the number of wines th
 ## Exploration Data Analysis
 
 ### Correlation of Data Features
-The ouput feature isn't strongly correlated to any of the physicochemical features of the dataset with **`alcohol`** having a correlation value of **`0.46`** with the target feature. However, there are strong correlations between some of the physicochemical features. 
-**`residual Sugar`** has a correlation value of **`0.82`** with **`density`**, **`total sulfur dioxide`** with a correlation value of **`0.62`** with **`free sulfur dioxide`**, **`density`** a correlation value of **`0.54`** with **`total sulfur dioxide`** and **`alcohol`** with a correlation value of **`-0.76`** with **`density`**.
+The ouput feature isn't strongly correlated to any of the physicochemical features of the dataset with **`alcohol`** having the highest correlation value of **`0.46`** with the target feature. However, there are strong correlations between some of the physicochemical features.
+---
++ **`residual Sugar`** has a correlation value of **`0.82`** with **`density`**, 
+---
++ **`total sulfur dioxide`** has a correlation value of **`0.62`** with **`free sulfur dioxide`**, 
+--
++ **`density`** has a correlation value of **`0.54`** with **`total sulfur dioxide`** 
+---
++ and **`alcohol`** has a correlation value of **`-0.76`** with **`density`**.
+---
+The figure below gives a summary of the correlation of data features.
 
 ![Correlation of Data Feature](figures/Data_Features_Correlation.png)
 
 Also, upon analysing the dataset, some interesting insights was observed on the features of the dataset;
 ---
-**`fixed acidity`** of **`high quality white wines`** have a **`mean value of 6.779`**, whiles **`low quality white wines`** have a **`mean value of 6.957`**, 
++ **`fixed acidity`** of **`high quality white wines`** have a **`mean value of 6.779`**, whiles **`low quality white wines`** have a **`mean value of 6.957`**, 
 ---
-**`residual sugar`** of **`high quality white wines`** have a **`mean value of 5.532`** whiles **`low quality white wines`** have a **`mean value of 6.656`**, 
++ **`residual sugar`** of **`high quality white wines`** have a **`mean value of 5.532`** whiles **`low quality white wines`** have a **`mean value of 6.656`**, 
 ---
-**`density`** of **`high quality white wines`** have a **`mean value of 0.993`** whiles **`low quality white wines`** have a **`mean value of 0.995`**.
++ **`density`** of **`high quality white wines`** have a **`mean value of 0.993`** whiles **`low quality white wines`** have a **`mean value of 0.995`**.
 ---
-**`alcohol`** of **`high quality white wines`** have a **`mean value of 10.940`** whiles **`low quality white wines`** have a **`mean value of 9.909`**.
++ **`alcohol`** of **`high quality white wines`** have a **`mean value of 10.940`** whiles **`low quality white wines`** have a **`mean value of 9.909`**.
 ---
 
-Here, you can see a **`bar plot`** for the **`fixed acidity`** feature, all the other plots can be seen in the notebook and also in the **`figures`** directory of this repository.
+Here, you can see a **`bar plot`** for the **`density`** feature, all the other plots can be seen in the notebook and also in the **`figures`** directory of this repository.
 
-![Mean Value of fixed acidity per Target Label]()
+![Mean Value of density per Target Label](Mean_Value_of_density_per_Target_Label.png)
 
-Summary of this statistics on all data features can be found as two csv files named **`features_mean_stats_per_target_variable.csv`** and **`features_std_stats_per_target_variable.csv`** in the **`csv_tables`** folder in this repository.
+Summary of this statistics on all data features can be found as two csv files named **`features_mean_stats_per_target_variable.csv`** and **`features_std_stats_per_target_variable.csv`** in the **`csv_tables`** directory in this repository.
 
 **`KDE plots`** of the data features per the output feature can be found in the notebook and also inside the folder named **`figures`** in this repository.
+
+Below is the **`KDE plot`** of **`ph`**, all other KDE plots can be seen in the notebook and also in the **`figures`** directory of this respository.
+
+![KDE plot of ph](figures/pH_Distribution_of_high_rate_low_rate_quality.png)
 
 ## Data Preprocessing
 

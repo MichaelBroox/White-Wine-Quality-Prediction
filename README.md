@@ -3,14 +3,14 @@
 # White Wine quality prediction
 
 ## Introduction
-The white wine is a variant of the Portuguese **"Vinho Verde"** wine **_[UCI](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_** which is a unique and valued wine in the wine industry **_[Vinho Verde](https://www.vinhoverde.pt/en/history-of-vinho-verde)_**.
-The origin of Vinho Verde which is one of the largest and oldest wine regions in the world refers to the natural characteristics of the region where the wines are being made. The region produces dense green foliage as a natural characteristic and occupies the northwest of Portugal **_[Vinho Verde](https://www.vinhoverde.pt/en/history-of-vinho-verde)_**. 
+The white wine is a variant of the Portuguese **"Vinho Verde"** wine (**_[UCI](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_**) which is a unique and valued wine in the wine industry (**_[Vinho Verde](https://www.vinhoverde.pt/en/history-of-vinho-verde)_**).
+The origin of Vinho Verde which is one of the largest and oldest wine regions in the world refers to the natural characteristics of the region where the wines are being made. The region produces dense green foliage as a natural characteristic and occupies the northwest of Portugal (**_[Vinho Verde](https://www.vinhoverde.pt/en/history-of-vinho-verde)_**). 
 
 ## Dataset, Features and Target Variable
-The dataset has 4898 entries with 12 columns and it is available from the **_[UCI machine learning repository](https://archive.ics.uci.edu/ml/datasets/wine+quality)_**.
+The dataset has **`4898 entries`** (rows) with 12 columns and it is available at the **_[UCI machine learning repository](https://archive.ics.uci.edu/ml/datasets/wine+quality)_**.
 
 ### Data Features
-The data features consist of only physicochemical properties **_[UCI](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_** of white wines and below are the dataset features;
+The data features consist of only physicochemical properties (**_[UCI](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_**) of white wines and below are the dataset features;
 
 + **_fixed acidity_**: Most acids involved with wine or fixed or nonvolatile (do not evaporate readily).
 ---
@@ -45,7 +45,7 @@ There were **no missng values*** found out of the 4898 entries of the dataset.
 There were **937 duplicated values** found in the dataset and they were treated by droping them and keeping the first instance of the duplicated values.
 
 ### Target Variable
-The target variable `quality` is based on sensory data that ranges from **0** (*very bad*) to **10** (*very excellent*). However, upon analysing the data, it was observed that the instances of the `quality` attribute of the dataset had a data distribution that ranges from 3 to 9 which makes the problem to be a classification problem as shown below.
+The target variable `quality` is based on sensory data that ranges from **0** (*very bad*) to **10** (*very excellent*) (**_[UCI](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_**). However, upon analysing the data, it was observed that the instances of the `quality` attribute of the dataset had a data distribution that ranges from 3 to 9 which makes the problem to be a classification problem as shown below.
 
 ![Distribution Plot](figures/Distribution_Plot_of_quality.png)
 
@@ -111,6 +111,19 @@ Below is the **`KDE plot`** of **`ph`**.
 
 
 ## Data Preprocessing
+The original output variable of the dataset (which is **`quality`**) was dropped from the dataset because of the new target variable that was created to replace it. 
+
+### Feature Matrix and Target Label
+After dropping the `quality` feature, the dataset was then splitted into **`feature matrix`** (the 11 physicochemical properties of the dataset) and a **`target lable`** (the newly created target feature). 
+
+### Data Resampling
+With the data being an imbalance dataset, there was a need to make sure that the data that will be used in training the machine learning algorithms is balance enough to prevent inference/generalization issues. With that being said, an oversampling technique was used to create synthetic data samples of the minority class to balance the dataset classes. The dataset was upsampled with Synthethic Minority Oversampling Technique (**[SMOTE](https://arxiv.org/abs/1106.1813)**).
+
+### Train and Test Split
+After upsampling the dataset, it was then splitted into **`train and test sets`** with **`70% for the training set`** and **`30% for the testing set`**.
+
+### Data Normalization
+The data was then normalized to ensure that data values are uniform to help the machine learning algorithms archive better results and this was done with the help of the **`StandardScaler preprocessing function`** from the **`sklearn library`**. 
 
 ## Modelling
 

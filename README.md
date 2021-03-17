@@ -129,18 +129,19 @@ The data was then normalized to ensure that data values are uniform to help the 
 **`6 different machine learning algoritms`** were chosen of this task,
 **`1 tree algorithm`** (**`Decision Tree`**), and **`5 ensembles`** (**`Random Forest, AdaBoost, ExtraTree, GradientBoosting and XGBOOST`**) to see which algorithm will perform better on this classification task.
 
-The algorithms were fitted on the normalized data to see how the models perform and also have a baseline performance to compare.
+The algorithms were fitted on the normalized data to see how the models will perform and also have a baseline performance to compare.
 
 Below is the results for the models performance on the first fit.
 
 ![Models Train and Test Accuracies](figures/Train_and_Test_Accuracies.png)
 
-From the resutls, it was obeserved that 4 of the models (**`Decision Tree, Random Forest, ExtraTree and XGBOOST  `**) overfitted with only two models (**`AdaBoost and GradientBoosting`** ) that had a well fit on the dataset.
+From the resutls, it was obeserved that 4 models (**`Decision Tree, Random Forest, ExtraTree and XGBOOST  `**) overfitted with only two models (**`AdaBoost and GradientBoosting`** ) that had a well fit on the dataset.
 
-Feature Importance of all the algorithms was also accquired and the figure below shows the feature importance of the GradientBoosting model. All other feature importance plots can be seen in the **`White Wine Quality Prediction notebook`** and also inside the directory called **`figures`** in this repository.
+Feature Importance of all the algorithms was also accquired and the figure below shows the feature importance of the GradientBoosting model. All other feature importance plots can be seen in the **`White Wine Quality Prediction notebook`** and also inside the directory called **`figures`** in this repository. Also, a summary of feature importances of all the models can be found as a csv file named **`Summary_Feature_Importance_of_Selected_Predictor(s).csv`** in the **`csv_tables`** directory.
 
 ![GradientBoosting Feature Importance](figures/GradientBoosting.png)
 
+From the results, it is clearly seen that the most importance feature to determine whether a white wine is to be classified as a high quality or a low quality wine is the **`alcohol physicochemical property of white wines`**
 
 ## Evaluation
 

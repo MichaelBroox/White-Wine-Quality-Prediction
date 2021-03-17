@@ -89,7 +89,7 @@ Also, upon analysing the dataset, some interesting insights was observed on the 
 
 Here, you can see a **`bar plot`** for the **`density`** feature, all the other plots can be seen in the notebook and also in the **`figures`** directory of this repository.
 
-![Mean Value of density per Target Label](Mean_Value_of_density_per_Target_Label.png)
+![Mean Value of density per Target Label](figures/Mean_Value_of_density_per_Target_Label.png)
 
 Summary of this statistics on all data features can be found as two csv files named **`features_mean_stats_per_target_variable.csv`** and **`features_std_stats_per_target_variable.csv`** in the **`csv_tables`** directory in this repository.
 

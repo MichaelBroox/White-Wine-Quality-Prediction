@@ -86,7 +86,7 @@ Here, you can see a figure of the distribution and boxplot of **`alcohol`**, all
 ![Distribution and Boxplot of alcohol](figures/Outlier10.png)
 
 ### Feature Statistics
-Also, upon analysing the dataset, some interesting insights was observed on the features of the dataset;
+Also, upon analysing the dataset, some interesting insights was observed about the dataset features;
 
 + **`fixed acidity`** of **`high quality white wines`** have a **`mean value of 6.779`**, whiles **`low quality white wines`** have a **`mean value of 6.957`**, 
 ---
@@ -128,6 +128,7 @@ The data was then normalized to ensure that data values are uniform to help the 
 ## Modelling
 **`6 different machine learning algoritms`** were chosen of this task,
 **`1 tree algorithm`** (**`Decision Tree`**), and **`5 ensembles`** (**`Random Forest, AdaBoost, ExtraTree, GradientBoosting and XGBOOST`**) to see which algorithm will perform better on this classification task.
+
 
 ## Evaluation
 

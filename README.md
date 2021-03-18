@@ -128,6 +128,7 @@ The data was then normalized to ensure that the range of data values are uniform
 ## Modelling
 **`6 different machine learning algoritms`** were chosen of this task,
 **`1 tree algorithm`** (**`Decision Tree`**), and **`5 ensembles`** (**`Random Forest, AdaBoost, ExtraTree, GradientBoosting and XGBOOST`**) to see which algorithm will perform better on this classification task.
+All modelling were done with the **`default parameters`** of the various algorithms with a random state value of **`81`**
 
 ### Cross-Validation
 The 6 algorithms were cross-validated on the feature matrix and the target label of the dataset. Upon cross-validating the models, the results of the top three models that performed well on the dataset is as shown below;
@@ -207,12 +208,21 @@ All other feature importance plots can be seen in the **`White Wine Quality Pred
 ## Conclusion and Recommendation
 
 ### Conclusion
+This experiment aims at the prediction of vinho verde white wine quality from analytical tests. A dataset with 4898 entries was considered, which includes vinho verde white wine samples from the northwest region of Portugal. This experiment was treated as a classification task that was modelled on 6 different machine learning classification algorithms to see which one will perform better in predicting whether a white wine is to be considered as a low quality (0) or a high quality (1) wine. 
 
+This experiment present an approach; 
++ in dealing with a dataset with imbalance classes, 
+
++ the physicochemical properties of white wines that highly correlate with each other, 
+
++ the mean and standard deviation statistics to be considered for the physicochemical properties per the quality of white wines,
+
++ and the features that can be considered important in predicting the quality of vinho verde white wines per the classifiers that were chosen for this task.
 
 ### Recommendation
 
 
-## Reference
+## References
 + **_[\[1\]](https://doi.org/10.1016/j.dss.2009.05.016)_** P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.
 
 + **_[\[2\]](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_** Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.

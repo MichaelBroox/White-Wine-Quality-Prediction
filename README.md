@@ -220,7 +220,8 @@ This experiment present an approach;
 + and the features that can be considered important in predicting the quality of vinho verde white wines per the classifiers that were chosen for this task.
 
 ### Recommendation
-
+More data instances for each of the data classes and perhaps adding more data features will increase model performance. Also, with regards to model performance, hyperparameter optimization can be employed in this experiment to tune the parameters of the various algorithms for better model performance.
+Again, the model can be deployed in production as a web app, mobile app or a web api for end users like winegrowers and **_[sommeliers](https://en.wikipedia.org/wiki/Sommelier)_**.
 
 ## References
 + **_[\[1\]](https://doi.org/10.1016/j.dss.2009.05.016)_** P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.

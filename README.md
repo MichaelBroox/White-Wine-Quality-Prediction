@@ -39,7 +39,7 @@ The data features consist of only physicochemical properties (**_[UCI](https://a
 All data values were recorded as continous values of type `float64` with the exception of the output feature (`quality`) which is of the type `int64`.
 
 ### Missing Values
-There were **no missng values** found out of the 4898 entries of the dataset.
+There were **no missng values** found in the 4898 entries of the dataset.
 
 ### Duplicated Values
 There were **937 duplicated values** found in the dataset and they were treated by droping them and keeping the first instance of each duplicated value.

@@ -167,19 +167,42 @@ After fitting the algorithms on the six features, the results of the model perfo
 ## Evaluation
 After fitting the algorithms on the top six features, it was obeserved that, agian 4 models (**`Decision Tree, Random Forest, ExtraTree and XGBOOST`**) overfitted with only two models (**`AdaBoost and GradientBoosting`** ) fitting well on the dataset.
 
-Upon observing that, the **`GradientBoosting`** model was chosen as the final model to evaluate on the **`test set`**.
+Upon observing that, the **`GradientBoosting`** model was chosen as the final model to evaluate it's performance on the **`test set`**.
+
+The evaluation metrics chosen for this task are;
+
++ **`Accuracy Score`**,
++ **`Precision Score`**,
++ **`Recall Score`**,
++ and **`F1-Score`**.
+
+The GradientBoosting model had;
+
++ An **`Accuracy Score of 0.7915`**
++ A **`Precision Score of 0.7941`**
++ A **`Recall Score of 0.787`**
++ and **`F1-Score of 0.7905`**
+
+Here, the results of the **`confusion matrix`**, **`ROC-AUC curve`** and **`residuals plot`** of the **`GradientBoosting`** model can be seen.
 
 ### Confusion Matrix
 
 ![Confusion Matrix](figures/confustion_matrix_plot.png)
 
-### ROC-Curve
+### ROC-AUC Curve
 
-![ROC-Curve](figures/ROC_Curve.png)
+![ROC-AUC Curve](figures/ROC_Curve.png)
 
 ### Residuals Plot
 
 ![Residuals Plot](figures/Residuals_plot.png)
+
+### Feature Importance
+Again, the feature importance of the six features was accquired from all the algorithms and the figure below shows the feature importance of the final model (**`GradientBoosting`**) that was chosen for evaluation.
+All other feature importance plots can be seen in the **`White Wine Quality Prediction notebook`** and also inside the directory called **`new_figures`** in this repository. Moreover, a summary of feature importances of all models can be found as a csv file named **`Summary_Feature_Importance_of_Selected_Predictor(s).csv`** in the **`new_csv_tables`** directory.
+
+![GradientBoosting Feature Importance](new_figures/GradientBoosting.png)
+
 
 ## Conclusion and Recommendation
 

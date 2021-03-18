@@ -42,7 +42,7 @@ All data values were recorded as continous values of type `float64` with the exc
 There were **no missng values*** found out of the 4898 entries of the dataset.
 
 ### Duplicated Values
-There were **937 duplicated values** found in the dataset and they were treated by droping them and keeping the first instance of the duplicated values.
+There were **937 duplicated values** found in the dataset and they were treated by droping them and keeping the first instance of each duplicated value.
 
 ### Target Variable
 The target variable `quality` is based on sensory data that ranges from **0** (*very bad*) to **10** (*very excellent*) (**_[UCI](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_**). However, upon analysing the data, it was observed that the instances of the `quality` attribute of the dataset had a data distribution that ranges from 3 to 9 which makes the problem to be a classification problem as shown below.

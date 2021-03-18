@@ -1,6 +1,6 @@
 ![AddictivePython](AddictivePython.png)
 ---
-# White Wine quality prediction
+# Vinho Verde White Wine quality prediction
 
 ## Introduction
 The white wine is a variant of the Portuguese **"Vinho Verde"** wine (**_[UCI](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_**) which is a unique and valued wine in the wine industry (**_[Vinho Verde](https://www.vinhoverde.pt/en/history-of-vinho-verde)_**).
@@ -165,7 +165,7 @@ After fitting the algorithms on the six features, the results of the model perfo
 
 
 ## Evaluation
-After fitting the algorithms on the top six features, it was obeserved that, agian 4 models (**`Decision Tree, Random Forest, ExtraTree and XGBOOST`**) overfitted with only two models (**`AdaBoost and GradientBoosting`** ) fitting well on the dataset.
+After fitting the algorithms on the top six features, it was obeserved that, agian, 4 models (**`Decision Tree, Random Forest, ExtraTree and XGBOOST`**) overfitted with only two models (**`AdaBoost and GradientBoosting`** ) fitting well on the dataset.
 
 Upon observing that, the **`GradientBoosting`** model was chosen as the final model to evaluate it's performance on the **`test set`**.
 

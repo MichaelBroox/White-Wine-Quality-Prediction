@@ -45,7 +45,7 @@ There were **no missng values** found in the 4898 entries of the dataset.
 There were **937 duplicated values** found in the dataset and they were treated by droping them and keeping the first instance of each duplicated value.
 
 ### Target Variable
-The target variable `quality` is based on sensory data that ranges from **0** (*very bad*) to **10** (*very excellent*) (**_[UCI](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_**). However, upon analysing the data, it was observed that the instances of the `quality` attribute of the dataset had a data distribution that ranges from 3 to 9 which makes the problem to be a classification problem as shown below.
+The target variable `quality` is based on sensory data that ranges from **0** (*very bad*) to **10** (*very excellent*) (**_[UCI](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)_**). However, upon analysing the data, it was observed that the instances of the `quality` attribute of the dataset had a data distribution that ranges from 3 to 9 which makes the problem to be considered as a classification problem as shown below.
 
 ![Distribution Plot](figures/Distribution_Plot_of_quality.png)
 
@@ -120,10 +120,10 @@ After dropping the `quality` feature, the dataset was then splitted into **`feat
 With the data being an imbalance dataset, there was a need to make sure that the data that will be used in training the machine learning algorithms is balance enough to prevent inference/generalization issues. With that being said, an oversampling technique was used to create synthetic data samples of the minority class to balance the dataset classes. The dataset was upsampled with Synthethic Minority Oversampling Technique (**[SMOTE](https://arxiv.org/abs/1106.1813)**).
 
 ### Train and Test Split
-After upsampling the dataset, it was then splitted into **`train and test sets`** with **`70% for the training set`** and **`30% for the testing set`**.
+After upsampling the dataset, it was then splitted into **`train and test sets`** with **`70% of the data for the training set`** and **`30% of the data for the testing set`**.
 
 ### Data Normalization
-The data was then normalized to ensure that data values are uniform to help the machine learning algorithms archive better results and this was done with the help of the **`StandardScaler preprocessing function`** from the **`sklearn library`**. 
+The data was then normalized to ensure that the range of data values are uniform to help the machine learning algorithms archive better results and this was done with the help of the **`StandardScaler preprocessing function`** from the **`sklearn library`**. 
 
 ## Modelling
 **`6 different machine learning algoritms`** were chosen of this task,
@@ -143,11 +143,11 @@ Summary of the cross-validation results can be found as a csv file named **`cros
 ### Modelling on Normalized Data
 The algorithms were fitted on the normalized data to see how the models will perform and also have a baseline performance to compare.
 
-Below is the results for the models performance on the first fit.
+Below is the results for the models performance on the on the normalized data.
 
 ![Models Train and Test Accuracies](figures/Train_and_Test_Accuracies.png)
 
-From the resutls, it was obeserved that 4 models (**`Decision Tree, Random Forest, ExtraTree and XGBOOST  `**) overfitted with only two models (**`AdaBoost and GradientBoosting`** ) that had a well fit on the dataset.
+From the resutls, it was obeserved that 4 models (**`Decision Tree, Random Forest, ExtraTree and XGBOOST`**) overfitted with only two models (**`AdaBoost and GradientBoosting`** ) that had a well fit on the dataset.
 
 ### Feature Importance
 Feature Importance of all the algorithms was also accquired and the figure below shows the feature importance of the GradientBoosting model. All other feature importance plots can be seen in the **`White Wine Quality Prediction notebook`** and also inside the directory called **`figures`** in this repository. Moreover, a summary of feature importances of all models can be found as a csv file named **`Summary_Feature_Importance_of_Selected_Predictor(s).csv`** in the **`csv_tables`** directory.
@@ -157,16 +157,33 @@ Feature Importance of all the algorithms was also accquired and the figure below
 From the results, it is clearly seen that the most importance feature to determine whether a white wine is to be classified as a high quality or a low quality wine is the **`alcohol physicochemical property of white wines`**.
 
 ### Modelling on Top Six Features
-After obtaining the feature importance from the various algorithms, the top six features (**`alcohol, volatile acidity, free sulfur dioxide, citric acid, chlorides, total sulfur dioxide`**) from the **`GradientBoosting`** feature importance were chosen and the algorithms again were fitted on these six features to see how the models will perform.
+After obtaining the feature importance from the various algorithms, the top six features (**`alcohol, volatile acidity, free sulfur dioxide, citric acid, chlorides, total sulfur dioxide`**) from the **`GradientBoosting`** feature importance were chosen and the algorithms again were fitted on these six features to see how the models will perform on these six features.
 
 After fitting the algorithms on the six features, the results of the model performance is as shown below;
+
 ![Train and Test Accuracies of Models](new_figures/Train_and_Test_Accuracies_new.png)
 
 
 ## Evaluation
+After fitting the algorithms on the top six features, it was obeserved that, agian 4 models (**`Decision Tree, Random Forest, ExtraTree and XGBOOST`**) overfitted with only two models (**`AdaBoost and GradientBoosting`** ) fitting well on the dataset.
+
+Upon observing that, the **`GradientBoosting`** model was chosen as the final model to evaluate on the **`test set`**.
+
+### Confusion Matrix
+
+![Confusion Matrix](figures/confustion_matrix_plot.png)
+
+### ROC-Curve
+
+![ROC-Curve](figures/ROC_Curve.png)
+
+### Residuals Plot
+
+![Residuals Plot](figures/Residuals_plot.png)
 
 ## Conclusion and Recommendation
 
 ### Conclusion
+
 
 ### Recommendation
